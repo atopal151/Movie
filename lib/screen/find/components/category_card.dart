@@ -34,7 +34,9 @@ class _CategoryCardState extends State<CategoryCard> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const CategoryPage()));
+                        builder: (context) => CategoryPage(
+                              CategoriesName: widget.category,
+                            )));
               },
               child: SizedBox(
                 height: h / 6,
