@@ -56,7 +56,7 @@ class _MovieCardState extends State<MovieCard> {
                 child: SizedBox(
                   height: h / 3.6,
                   width: w / 2.8,
-                  child: Image.network(
+                  child: Image.asset(
                     widget.imageUrl,
                     fit: BoxFit.cover,
                   ),
