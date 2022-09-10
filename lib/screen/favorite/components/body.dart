@@ -49,7 +49,7 @@ class _FavoriteBodyState extends State<FavoriteBody> {
             category: "Fear",
             imdb: "7.7",
             imageUrl: "lib/assets/movieimage.jpg",
-          ),
+          )
         ],
       ),
     );
