@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
+import 'package:movie_info/component/component.dart';
 
 class MovieDetails extends StatefulWidget {
   const MovieDetails(
@@ -26,46 +27,150 @@ class _MovieDetailsState extends State<MovieDetails> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              flex: 3,
-              child: Container(
-                decoration:
-                    const BoxDecoration(borderRadius: BorderRadius.vertical()),
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      height: h / 1.5,
-                      width: w / 1,
-                      child: Image.network(
-                        widget.movieImage,
-                        fit: BoxFit.cover,
-                      ),
+            Stack(
+              children: [
+                Container(
+                  height: h * 0.4,
+                  child: Stack(children: [
+                    Container(
+                      height: h * 0.4 - 40,
+                      decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(50)),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(widget.movieImage))),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.all(16.0),
                       child: CloseButton(
                         color: Colors.white,
                       ),
-                    ),
-                  ],
+                    )
+                  ]),
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    width: w * 0.9,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(50),
+                          topLeft: Radius.circular(50)),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: const Offset(0, 5),
+                            blurRadius: 40,
+                            color: Colors.black.withOpacity(0.2)),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.local_movies,
+                                color: kPrimaryColor,
+                              ),
+                              RichText(
+                                  text: TextSpan(
+                                      text: "${widget.movieCategory}",
+                                      style: const TextStyle(
+                                          color: kTextLightColor,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold)))
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                color: kPrimaryColor,
+                              ),
+                              RichText(
+                                  text: TextSpan(
+                                      text: "${widget.movieImdb}",
+                                      style: const TextStyle(
+                                          color: kTextLightColor,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold)))
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.movie_creation,
+                                color: kPrimaryColor,
+                              ),
+                              RichText(
+                                  text: TextSpan(
+                                      text: "${widget.movieYear}",
+                                      style: const TextStyle(
+                                          color: kTextLightColor,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold)))
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-                flex: 4,
-                child: Center(
+            const SizedBox(height: 30),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 3,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("${widget.movieName}"),
-                      Text("${widget.movieImdb}"),
-                      Text("${widget.movieCategory}"),
-                      Text("${widget.movieYear}"),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          "${widget.movieName}",
+                          style: const TextStyle(
+                              color: kTextColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
-                ))
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: const [
+                      Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundColor: kPrimaryColor,
+                            child: Icon(
+                              Icons.favorite,
+                              color: Colors.white,
+                            ),
+                          )),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
