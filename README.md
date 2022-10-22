@@ -18,7 +18,8 @@ Bu uygulama izlemek isteyebileceğiniz filmleri listeler.
 
 
 
-![Screenshot_1666112034](https://user-images.githubusercontent.com/45879059/196495799-0c24b7b9-ee17-4186-8322-dbdaaccec178.png)
+![Screenshot_1666449340](https://user-images.githubusercontent.com/45879059/197345033-7fb03527-eeaa-4b90-a2da-221feed70d65.png)
+
 
 
 
@@ -29,8 +30,8 @@ Bu uygulama izlemek isteyebileceğiniz filmleri listeler.
 ![Screenshot_1666112045](https://user-images.githubusercontent.com/45879059/196495839-2b777e48-ca18-4748-8dac-ec1306f78fe7.png)
 
 
+![Screenshot_1666449361](https://user-images.githubusercontent.com/45879059/197345043-f35b73b4-9535-4e57-9c8a-789b416fcbbc.png)
 
-![Screenshot_1666112077](https://user-images.githubusercontent.com/45879059/196495917-bbafa396-ea14-4d22-aabc-44adb0b49c51.png)
 
 
 
