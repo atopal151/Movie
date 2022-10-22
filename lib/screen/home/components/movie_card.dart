@@ -9,13 +9,15 @@ class MovieCard extends StatefulWidget {
       required this.category,
       required this.year,
       required this.imdb,
-      required this.imageUrl})
+      required this.imageUrl,
+      required this.plot})
       : super(key: key);
   final String movieName;
   final String category;
   final String year;
   final String imageUrl;
   final String imdb;
+  final String plot;
   @override
   State<MovieCard> createState() => _MovieCardState();
 }
@@ -51,12 +53,13 @@ class _MovieCardState extends State<MovieCard> {
                                 movieImage: widget.imageUrl,
                                 movieImdb: widget.imdb,
                                 movieYear: widget.year,
+                                plot: widget.plot,
                               )));
                 },
                 child: SizedBox(
                   height: h / 3.6,
                   width: w / 2.8,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.imageUrl,
                     fit: BoxFit.cover,
                   ),

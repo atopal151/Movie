@@ -35,6 +35,7 @@ class _CategoryPageState extends State<CategoryPage> {
             category: "Fear",
             imdb: "7.2",
             imageUrl: "lib/assets/movieimage.jpg",
+            plot: "adsaa",
           ),
           MovieCard(
             year: "2021",
@@ -42,6 +43,7 @@ class _CategoryPageState extends State<CategoryPage> {
             category: "Actions",
             imdb: "7.0",
             imageUrl: "lib/assets/movieimage.jpg",
+            plot: "adsaa",
           ),
           MovieCard(
             year: "2022",
@@ -49,6 +51,7 @@ class _CategoryPageState extends State<CategoryPage> {
             category: "Fear",
             imdb: "8.9",
             imageUrl: "lib/assets/movieimage.jpg",
+            plot: "adsaa",
           ),
           MovieCard(
             year: "2022",
@@ -56,6 +59,7 @@ class _CategoryPageState extends State<CategoryPage> {
             category: "Fear",
             imdb: "8.2",
             imageUrl: "lib/assets/movieimage.jpg",
+            plot: "adsaa",
           ),
           MovieCard(
             year: "2022",
@@ -63,6 +67,7 @@ class _CategoryPageState extends State<CategoryPage> {
             category: "Fear",
             imdb: "7.7",
             imageUrl: "lib/assets/movieimage.jpg",
+            plot: "adsaa",
           ),
         ],
       )),
