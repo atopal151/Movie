@@ -57,7 +57,7 @@ class _MovieCardState extends State<MovieCard> {
                               )));
                 },
                 child: SizedBox(
-                  height: h / 3.6,
+                  height: h / 3.7,
                   width: w / 2.8,
                   child: Image.network(
                     widget.imageUrl,
@@ -70,13 +70,17 @@ class _MovieCardState extends State<MovieCard> {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  widget.movieName,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 16),
+              Container(
+                width: MediaQuery.of(context).size.width / 1.8,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    widget.movieName,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
                 ),
               ),
               Padding(
@@ -105,7 +109,7 @@ class _MovieCardState extends State<MovieCard> {
               ),
               Card(
                 color: kPrimaryColor,
-                elevation: 2,
+                elevation: 3,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
