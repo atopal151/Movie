@@ -60,7 +60,7 @@ class _MovieCardState extends State<MovieCard> {
                   height: h / 3.7,
                   width: w / 2.8,
                   child: Image.network(
-                    widget.imageUrl,
+                    "https://image.tmdb.org/t/p/original" + widget.imageUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -73,7 +73,7 @@ class _MovieCardState extends State<MovieCard> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width / 1.8,
+                width: MediaQuery.of(context).size.width / 2.2,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
@@ -83,14 +83,17 @@ class _MovieCardState extends State<MovieCard> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  widget.category,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: kTextLightColor),
+              Container(
+                width: MediaQuery.of(context).size.width / 2.2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    widget.category,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: kTextLightColor),
+                  ),
                 ),
               ),
               Padding(
@@ -105,7 +108,7 @@ class _MovieCardState extends State<MovieCard> {
                 ),
               ),
               const SizedBox(
-                height: 80,
+                height: 30,
               ),
               Card(
                 color: kPrimaryColor,

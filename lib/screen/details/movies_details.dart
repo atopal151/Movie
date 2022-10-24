@@ -45,7 +45,10 @@ class _MovieDetailsState extends State<MovieDetails> {
                               bottomLeft: Radius.circular(50)),
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(widget.movieImage))),
+                              image: NetworkImage(
+                                  // ignore: prefer_interpolation_to_compose_strings
+                                  "https://image.tmdb.org/t/p/original" +
+                                      widget.movieImage))),
                     ),
                     const Padding(
                       padding: EdgeInsets.all(16.0),

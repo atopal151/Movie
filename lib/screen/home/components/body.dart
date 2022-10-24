@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'movie_card.dart';
 import 'movie_model.dart';
+import 'movie_modeltmdb.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -12,12 +13,14 @@ class HomeBody extends StatefulWidget {
 
 class _HomeBodyState extends State<HomeBody> {
   late List<MovieModel> tumFilmler;
+  late List<MovieModelTmdb> tumtmdbFilmler;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     tumFilmler = [];
+    tumtmdbFilmler = [];
   }
 
   @override
@@ -25,21 +28,21 @@ class _HomeBodyState extends State<HomeBody> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: veriKaynaginiOku(),
+      future: veriKaynaginiOkutmdb(),
       builder: (BuildContext context, AsyncSnapshot sonuc) {
         if (sonuc.hasData) {
-          tumFilmler = sonuc.data;
+          tumtmdbFilmler = sonuc.data;
 
           return ListView.builder(
-            itemCount: tumFilmler.length,
+            itemCount: tumtmdbFilmler.length,
             itemBuilder: (context, index) {
               return MovieCard(
-                year: tumFilmler[index].Year,
-                movieName: tumFilmler[index].Title,
-                category: tumFilmler[index].Genre,
-                imdb: tumFilmler[index].imdbRating,
-                imageUrl: tumFilmler[index].Images[1],
-                plot: tumFilmler[index].Plot,
+                year: tumtmdbFilmler[index].release_date,
+                movieName: tumtmdbFilmler[index].title,
+                category: tumtmdbFilmler[index].title,
+                imdb: tumtmdbFilmler[index].release_date,
+                imageUrl: tumtmdbFilmler[index].poster_path,
+                plot: tumtmdbFilmler[index].overview,
               );
             },
           );
@@ -62,4 +65,18 @@ class _HomeBodyState extends State<HomeBody> {
         .toList();
     return filmListesi;
   }
+
+  Future<List<MovieModelTmdb>> veriKaynaginiOkutmdb() async {
+    var gelenJson = await DefaultAssetBundle.of(context)
+        .loadString("lib/assets/movieimdb.json");
+    debugPrint(gelenJson);
+
+    List<MovieModelTmdb> filmListesi = (json.decode(gelenJson) as List)
+        .map((mapYapisi) => MovieModelTmdb.fromJsonMap(mapYapisi))
+        .toList();
+    return filmListesi;
+  }
 }
+
+
+/*https://image.tmdb.org/t/p/original */
