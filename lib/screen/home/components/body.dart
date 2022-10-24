@@ -39,7 +39,6 @@ class _HomeBodyState extends State<HomeBody> {
               return MovieCard(
                 year: tumtmdbFilmler[index].release_date,
                 movieName: tumtmdbFilmler[index].title,
-                category: tumtmdbFilmler[index].title,
                 imdb: tumtmdbFilmler[index].release_date,
                 imageUrl: tumtmdbFilmler[index].poster_path,
                 plot: tumtmdbFilmler[index].overview,

@@ -9,14 +9,12 @@ class MovieDetails extends StatefulWidget {
       required this.movieImage,
       required this.movieName,
       required this.movieImdb,
-      required this.movieCategory,
       required this.movieYear,
       required this.plot})
       : super(key: key);
   final String movieImage;
   final String movieName;
   final String movieImdb;
-  final String movieCategory;
   final String movieYear;
   final String plot;
   @override
@@ -81,22 +79,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.local_movies,
-                                color: kPrimaryColor,
-                              ),
-                              RichText(
-                                  text: TextSpan(
-                                      text: "${widget.movieCategory}",
-                                      style: const TextStyle(
-                                          color: kTextLightColor,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold)))
-                            ],
-                          ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -197,46 +179,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                 )
               ],
             ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          "Category",
-                          style: TextStyle(
-                              color: kTextColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text(
-                          "${widget.movieCategory}",
-                          style: const TextStyle(
-                              color: kTextColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),

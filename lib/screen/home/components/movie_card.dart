@@ -6,14 +6,12 @@ class MovieCard extends StatefulWidget {
   const MovieCard(
       {Key? key,
       required this.movieName,
-      required this.category,
       required this.year,
       required this.imdb,
       required this.imageUrl,
       required this.plot})
       : super(key: key);
   final String movieName;
-  final String category;
   final String year;
   final String imageUrl;
   final String imdb;
@@ -49,7 +47,6 @@ class _MovieCardState extends State<MovieCard> {
                       MaterialPageRoute(
                           builder: (context) => MovieDetails(
                                 movieName: widget.movieName,
-                                movieCategory: widget.category,
                                 movieImage: widget.imageUrl,
                                 movieImdb: widget.imdb,
                                 movieYear: widget.year,
@@ -80,19 +77,6 @@ class _MovieCardState extends State<MovieCard> {
                     widget.movieName,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width / 2.2,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    widget.category,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: kTextLightColor),
                   ),
                 ),
               ),

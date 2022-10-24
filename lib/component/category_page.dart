@@ -32,7 +32,6 @@ class _CategoryPageState extends State<CategoryPage> {
           MovieCard(
             year: "2022",
             movieName: "Jurassic World",
-            category: "Fear",
             imdb: "7.2",
             imageUrl: "lib/assets/movieimage.jpg",
             plot: "adsaa",
@@ -40,7 +39,6 @@ class _CategoryPageState extends State<CategoryPage> {
           MovieCard(
             year: "2021",
             movieName: "Spider Man No way Home",
-            category: "Actions",
             imdb: "7.0",
             imageUrl: "lib/assets/movieimage.jpg",
             plot: "adsaa",
@@ -48,7 +46,6 @@ class _CategoryPageState extends State<CategoryPage> {
           MovieCard(
             year: "2022",
             movieName: "They/Them",
-            category: "Fear",
             imdb: "8.9",
             imageUrl: "lib/assets/movieimage.jpg",
             plot: "adsaa",
@@ -56,7 +53,6 @@ class _CategoryPageState extends State<CategoryPage> {
           MovieCard(
             year: "2022",
             movieName: "Jurassic World",
-            category: "Fear",
             imdb: "8.2",
             imageUrl: "lib/assets/movieimage.jpg",
             plot: "adsaa",
@@ -64,7 +60,6 @@ class _CategoryPageState extends State<CategoryPage> {
           MovieCard(
             year: "2022",
             movieName: "Jurassic World",
-            category: "Fear",
             imdb: "7.7",
             imageUrl: "lib/assets/movieimage.jpg",
             plot: "adsaa",
